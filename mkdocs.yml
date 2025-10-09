@@ -1,0 +1,6 @@
+site_name: CI/CD Project Documentation
+nav:
+  - Home: index.md
+theme:
+  name: readthedocs
+docs_dir: docs
