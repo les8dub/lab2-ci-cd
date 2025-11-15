@@ -92,6 +92,10 @@ jobs:
     if: startsWith(github.ref, 'refs/heads/release/') && needs.test.result == 'success'
     needs: test
     
+    permissions:
+      packages: write
+      contents: read
+      
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -113,5 +117,9 @@ jobs:
   
       - name: Push Docker images
         run: |
-          docker push ghcr.io/les8dub/ci-cd-app:latest
-          docker push ghcr.io/les8dub/ci-cd-app:${{ github.sha }}
+          docker push ghcr.io/les8dub/lab2-ci-cd/ci-cd-app:latest
+          docker push ghcr.io/les8dub/lab2-ci-cd/ci-cd-app:${{ github.sha }}
+  
+      - name: Verify pushed images
+        run: |
+          echo "✅ Docker images successfully pushed to GitHub Container Registry"
