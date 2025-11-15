@@ -9,4 +9,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Копируем весь проект
 COPY . .
 
-CMD ["python", "-c", "print('CI/CD РАБОТАЕТ! ВЕРСИЯ 2.0 - АВТООБНОВЛЕНИЕ УСПЕШНО!')"]
+CMD ["python", "-c", "import time; print('CI/CD РАБОТАЕТ! ВЕРСИЯ 2.0'); time.sleep(3600)"]
