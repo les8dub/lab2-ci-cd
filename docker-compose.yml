@@ -2,14 +2,11 @@ version: '3.8'
 
 services:
   ci-cd-app:
-    image: $DOCKER_USERNAME/ci-cd-app:latest
+    image: ghcr.io/les8dub/ci-cd-app:latest
     container_name: ci-cd-app
     restart: unless-stopped
     ports:
       - "8000:8000"
-    environment:
-      - ENV=production
-      - VERSION=1.0
 
   watchtower:
     image: containrrr/watchtower
@@ -20,5 +17,4 @@ services:
     environment:
       - WATCHTOWER_POLL_INTERVAL=30
       - WATCHTOWER_CLEANUP=true
-      - WATCHTOWER_DEBUG=true
     command: --interval 30 ci-cd-app
