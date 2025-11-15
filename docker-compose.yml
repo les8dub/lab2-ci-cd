@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   ci-cd-app:
-    image: ghcr.io/les8dub/ci-cd-app:latest
+    image: ghcr.io/les8dub/lab2-ci-cd/ci-cd-app:latest
     container_name: ci-cd-app
     restart: unless-stopped
     ports:
