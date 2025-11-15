@@ -9,7 +9,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Копируем весь проект
 COPY . .
 
-# Если у вас есть основной скрипт, укажите его
-# CMD ["python", "main.py"]
-# ИЛИ для демонстрации:
-CMD ["python", "-c", "print('CI/CD with Docker - Release version!')"]
+CMD ["python", "-c", "print('CI/CD РАБОТАЕТ! ВЕРСИЯ 2.0 - АВТООБНОВЛЕНИЕ УСПЕШНО!')"]
