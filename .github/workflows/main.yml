@@ -101,8 +101,8 @@ jobs:
   
       - name: Build Docker image
         run: |
-          docker build -t ghcr.io/${{ github.repository_owner }}/ci-cd-app:latest .
-          docker build -t ghcr.io/${{ github.repository_owner }}/ci-cd-app:${{ github.sha }} .
+          docker build -t ghcr.io/les8dub/lab2-ci-cd/ci-cd-app:latest .
+          docker build -t ghcr.io/les8dub/lab2-ci-cd/ci-cd-app:${{ github.sha }} .
   
       - name: Log in to GitHub Container Registry
         uses: docker/login-action@v3
@@ -113,5 +113,5 @@ jobs:
   
       - name: Push Docker images
         run: |
-          docker push ghcr.io/${{ github.repository }}/ci-cd-app:latest
-          docker push ghcr.io/${{ github.repository }}/ci-cd-app:${{ github.sha }}
+          docker push ghcr.io/les8dub/ci-cd-app:latest
+          docker push ghcr.io/les8dub/ci-cd-app:${{ github.sha }}
